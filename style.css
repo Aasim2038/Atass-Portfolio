@@ -449,7 +449,9 @@ footer a {
     }
     
     .container {
-        padding: 40px 15px; /* Section padding kam kiya */
+        overflow-x: hidden; /* Only horizontal scroll ko hide karein */
+        width: 100%;
+        padding: 40px 10px; /* Padding kam karein */
     }
 
     /* Skills Grid ko chota kiya */
