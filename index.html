@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atass - Web Developer Portfolio</title>
+    <title>Your Name - Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="logo">Atass</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">Atass-Webdeveloper</div>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li> 
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
 
@@ -45,21 +46,21 @@
             <p>I love learning new technologies and solving complex problems. Let's build something great together!</p>
         </section>
 
-        <section id="skills" class="container">
-            <h2>💡 Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">HTML & CSS</div>
-                <div class="skill-item">JavaScript (ES6+)</div>
-                <div class="skill-item">[Framework/Library 2, e.g., Next.js]</div>
-                <div class="skill-item">[Backend Language/Framework, e.g., Node.js / Express]</div>
-                <div class="skill-item">Databases (SQL/NoSQL)</div>
-                <div class="skill-item">Git & GitHub</div>
-                <div class="skill-item">Cloud Platforms (AWS/GCP)</div>
-            </div>
-        </section>
+       <section id="skills" class="container">
+    <h2>💡 Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-item" data-aos="fade-up">HTML & CSS</div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">JavaScript (ES6+)</div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">[Framework/Library 2, e.g., Next.js]</div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">[Backend Languag/Framework,eg..,Node.js/Express]</div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="400">Databases(MongoDB)</div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="500">Git & GitHub</div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="600">Cloud Platforms(Cloudnery)</div>
+        </div>
+</section>
         <section id="projects" class="container">
             <h2>🚀 Featured Projects</h2>
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up">
                 <h3>SoftStitch.online</h3>
                 <p>A Clothing Fashion desing brand witch provide best designer shirts</p>
                 <div class="tech-used">
@@ -72,7 +73,7 @@
                 <a href="https://softstitch.online/" target="_blank" class="project-link">Live Demo</a>
                 <a href="[GitHub Link]" target="_blank" class="project-link">GitHub</a>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                 <h3>ShoeOn.com</h3>
                 <p>Another project description. Highlight the technologies used and what you learned from this project.</p>
                 <div class="tech-used">
@@ -84,7 +85,7 @@
                 <a href="[Live Demo Link]" target="_blank" class="project-link">Live Demo</a>
                 <a href="[GitHub Link]" target="_blank" class="project-link">GitHub</a>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Project Title Three</h3>
                 <p>Describe your third project here. What problem does it solve? What makes it unique?</p>
                 <div class="tech-used">
@@ -100,14 +101,50 @@
         </main>
 
     <footer>
-        <p>&copy; 2025 **Your Name**. All rights reserved.</p>
-        <div class="social-links">
-            <a href="[LinkedIn Profile]" target="_blank">LinkedIn</a> |
-            <a href="[GitHub Profile]" target="_blank">GitHub</a> |
-            <a href="[Twitter/X Handle]" target="_blank">Twitter</a>
+            
+            <section id="contact" class="container" data-aos="fade-up">
+    <h2>✉️ Get In Touch</h2>
+    <p>I'm currently looking for new opportunities. Let's connect and discuss your project or job opening!</p>
+
+    <form id="contact-form" action="https://formspree.io/f/xyzrzvjn" method="POST">
+        
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
         </div>
+
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="_replyto" required placeholder="Enter your email address">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="What can I help you with?"></textarea>
+        </div>
+
+        <button type="submit" class="btn primary-btn">Send Message</button>
+    </form>
+    
+    <div class="social-links-contact">
+        <p>Or connect via:</p>
+        <a href="[LinkedIn Profile]" target="_blank">LinkedIn</a> |
+        <a href="[GitHub Profile]" target="_blank">GitHub</a>
+    </div>
+<p>&copy; 2025 Atass. All rights reserved.</p>
+</section>
+
     </footer>
 
     <script src="script.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    
+    <script>
+        AOS.init({
+            duration: 1000, // Animation ki speed (1 second)
+            once: true,      // Animation sirf ek baar chale jab user section pe pahunche
+        });
+    </script>
 </body>
 </html>

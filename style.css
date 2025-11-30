@@ -20,15 +20,20 @@ body {
     line-height: 1.6;
     color: var(--text-color-light);
     background-color: var(--background-dark);
-    scroll-behavior: smooth;
-    /* Smooth transition for background changes if dark/light mode were implemented */
-    transition: background-color 0.3s, color 0.3s;
+    
+    /* === FIX: Yeh line add karein === */
+    
 }
+html {
+    scroll-behavior: smooth; 
+        transition: background-color 0.3s, color 0.3s;
 
+}
 /* Headings */
 h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 0.5em;
+
 }
 
 h2 {
@@ -75,6 +80,18 @@ nav {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px 20px;
+}
+
+/* Navigation: Active Link Styling */
+nav ul a.active {
+    color: white; /* Active link ka color bright white rakha */
+    font-weight: 700;
+}
+
+/* Active link pe neon underline dikhane ke liye */
+nav ul a.active::after {
+    width: 100%;
+    background-color: var(--primary-color);
 }
 
 .logo {
@@ -307,6 +324,61 @@ footer a {
     margin: 0 5px;
 }
 
+#contact {
+    /* Center text ko form ke liye hatate hain */
+    text-align: center; 
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--card-background); /* Dark card background */
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color-light); /* Light text */
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--background-dark); /* Very dark input background */
+    color: var(--text-color-light);
+    border: 1px solid var(--secondary-color); /* Neon border */
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--primary-color); /* Highlight border on focus */
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+.social-links-contact {
+    margin-top: 30px;
+    color: #b0b0b0;
+}
 /* 10. Responsive Design (Basic) */
 /* 10. Responsive Design (Detailed) */
 @media (max-width: 992px) {
