@@ -1,0 +1,254 @@
+/* Global Setup */
+:root {
+    --primary-color: #0077B6; 
+    --text-color: #333;
+    --background-color: #FFFFFF;
+    --border-color: #E0E0E0;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: #F4F4F4; 
+}
+
+/* Resume Container - Defines the A4-like page boundary */
+.resume-container {
+    max-width: 850px; 
+    margin: 30px auto;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Header & Contact Info */
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.header .title {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Added gap for better spacing */
+}
+
+.contact-info span a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 5px; /* Added padding for touch targets */
+    border-right: 1px solid #ccc;
+}
+
+.contact-info span:last-child a {
+    border-right: none;
+}
+
+.contact-info a:hover {
+    color: var(--primary-color);
+}
+
+/* Section Styling (Same as before) */
+.section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section h2 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Skills List (Same as before) */
+.skills-list p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+.skills-list strong {
+    color: #555;
+    margin-right: 5px;
+}
+
+/* Experience & Projects Styling */
+.experience-item {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.experience-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.experience-item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.experience-item .company, .experience-item .dates {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.experience-item .dates {
+    font-style: italic;
+}
+
+.project-details {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.achievements {
+    list-style-type: disc;
+    margin-left: 30px;
+    font-size: 0.95rem;
+}
+
+.achievements li {
+    margin-bottom: 5px;
+}
+
+
+/* ================================== */
+/* 📱 RESPONSIVENESS (Media Queries) */
+/* ================================== */
+
+/* For smaller screens like tablets and large phones (max 768px) */
+@media (max-width: 768px) {
+    
+    .resume-container {
+        margin: 20px 15px; /* Adjust margin for smaller devices */
+        padding: 20px;
+        box-shadow: none; /* Remove shadow on smaller screens */
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header .title {
+        font-size: 1rem;
+    }
+
+    /* Contact info stacks vertically */
+    .contact-info {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start; /* Align text to the left */
+        text-align: left;
+    }
+    
+    .contact-info span {
+        margin: 0;
+        width: 100%; /* Take full width */
+        text-align: left;
+    }
+    
+    .contact-info span a {
+        border-right: none; /* Remove vertical separators */
+        padding: 0;
+        display: block;
+        
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    /* Experience/Project Title wraps and dates stack */
+    .experience-item h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-item .dates {
+        margin-top: 5px;
+        font-size: 0.85rem;
+    }
+}
+
+/* For very small screens/mobile phones (max 480px) */
+@media (max-width: 480px) {
+    
+    .resume-container {
+        padding: 15px 10px; /* Minimal padding */
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .experience-item h3 {
+        font-size: 1rem;
+    }
+
+    .achievements {
+        margin-left: 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Ensure the print media query still works for PDF generation */
+    @media print {
+        /* Print styles remain the same for clean PDF output */
+        body {
+            background-color: var(--background-color);
+        }
+        .resume-container {
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+}

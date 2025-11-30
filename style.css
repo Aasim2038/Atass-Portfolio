@@ -1,0 +1,420 @@
+/* 1. Global Reset & Typography (Dark Theme) */
+:root {
+    --primary-color: #00FF99; /* Neon Green/Mint Accent */
+    --secondary-color: #00B36B; /* Slightly darker green */
+    --background-dark: #121212; /* Very dark background */
+    --card-background: #1F1F1F; /* Slightly lighter card/section background */
+    --text-color-light: #E0E0E0; /* Light text for readability */
+    --border-radius: 8px;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--background-dark);
+    scroll-behavior: smooth;
+    /* Smooth transition for background changes if dark/light mode were implemented */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color); /* Neon accent for section titles */
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color); /* Subtle underline effect */
+    display: inline-block;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Utility Class */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px; /* Increased padding for more breathing room */
+}
+
+/* 2. Header & Navigation */
+header {
+    background-color: var(--background-dark);
+    border-bottom: 1px solid #292929; /* Dark border separator */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 35px;
+}
+
+nav ul a {
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    color: var(--text-color-light);
+    font-size: 1rem;
+}
+
+/* Neon Underline effect on hover */
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+}
+
+/* 3. Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-top: 15px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    letter-spacing: 0.5px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--background-dark); /* Dark text on neon background */
+    border-color: var(--primary-color);
+}
+
+.primary-btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color); /* Subtle neon glow */
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    margin-left: 15px;
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-dark);
+}
+
+/* 4. Hero Section */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 55%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.2em;
+    color: white; /* White for the main name/title */
+    line-height: 1.1;
+}
+
+.hero-content .tagline {
+    font-size: 1.8rem;
+    color: var(--primary-color); /* Neon accent for tagline */
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    max-width: 40%;
+    /* Inspired by the circular/shaped image or clean block on the Dribbble link */
+    width: 300px;
+    height: 3}
+
+/* 5. About Me Section */
+#about {
+    background-color: var(--card-background);
+    border-top: 1px solid #eee;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto 1.5em;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* 6. Skills Section */
+.skills-grid {
+    /* Displaying items in a nice, wrapping grid */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the skill items */
+    gap: 15px; /* Space between the skill items */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    /* Look and Feel - Like the Project Tags */
+    background-color: transparent; /* Background dark rakha */
+    color: var(--primary-color); /* Neon text */
+    
+    padding: 10px 20px;
+    border-radius: 4px; 
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    
+    /* Border aur Hover effect */
+    border: 1px solid var(--secondary-color); /* Subtle neon border */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    
+    /* Optional: Thoda sa shadow */
+    box-shadow: 0 0 5px rgba(0, 255, 153, 0.2); 
+}
+
+.skill-item:hover {
+    background-color: var(--primary-color); /* Neon fill on hover */
+    color: var(--background-dark); /* Dark text on neon background */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); 
+}
+
+/* 7. Projects Section */
+#projects {
+    background-color: var(--card-background);
+    border-top: 1px solid #eee;
+}
+
+.project-card {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tech-used {
+    margin: 15px 0;
+}
+
+.tech-used span {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.project-link {
+    margin-right: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* 8. Contact Section */
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* 9. Footer */
+footer {
+    background-color: #343A40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    margin: 0 5px;
+}
+
+/* 10. Responsive Design (Basic) */
+/* 10. Responsive Design (Detailed) */
+@media (max-width: 992px) {
+    /* Large Tablets */
+    .hero-content h1 {
+        font-size: 3rem; /* Heading size kam kiya */
+    }
+    .hero-content .tagline {
+        font-size: 1.4rem;
+    }
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    
+    /* Hero Section Stacking */
+    .hero {
+        flex-direction: column-reverse; /* Image upar, content neeche */
+        text-align: center;
+        min-height: unset;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .hero-content, .hero-image {
+        max-width: 100%; /* Full width */
+    }
+    
+    /* Hero Image ko center mein laya */
+    .hero-image {
+        margin-bottom: 30px;
+        width: 200px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+
+    /* Buttons Stacking Fix (IMPORTANT FIX) */
+    .hero-content a.btn {
+        display: block; /* Buttons ko stack kiya */
+        width: 80%; /* Width fix ki */
+        margin: 10px auto; /* Center kiya */
+    }
+    
+    .secondary-btn {
+        margin-left: auto; /* Margin fix */
+    }
+
+    /* Navigation Hiding (Hamburger menu ki jagah simple hide) */
+    nav {
+        justify-content: center;
+    }
+    
+    nav ul {
+        display: none; /* Simple mobile nav hiding */
+    }
+    
+    .container {
+        padding: 40px 15px; /* Section padding kam kiya */
+    }
+
+    /* Skills Grid ko chota kiya */
+    .skills-grid {
+        gap: 10px;
+    }
+    
+    /* Project Cards ko full width diya */
+    .project-card {
+        padding: 20px;
+    }
+}
+
+/* For smaller phones */
+@media (max-width: 480px) {
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .tagline {
+        font-size: 1rem;
+    }
+    
+    /* Buttons ko thoda aur chota kiya */
+    .hero-content a.btn {
+        width: 95%; 
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5em;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+}
