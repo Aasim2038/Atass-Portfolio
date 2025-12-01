@@ -24,6 +24,10 @@ body {
     /* === FIX: Yeh line add karein === */
     
 }
+
+.html::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
 html {
     scroll-behavior: smooth; 
         transition: background-color 0.3s, color 0.3s;
@@ -412,11 +416,17 @@ footer a {
     }
     
     /* Hero Image ko center mein laya */
-    .hero-image img{
-        display: block;
-        margin: 0 auto;
-        width: 250px;
-        height: 250px;
+    .hero-image {
+        width: 90%; /* Phone screen ki 90% width lega */
+        max-width: 400px; /* Lekin 400px se zyada nahi hoga */
+        height: auto;
+        
+        /* === IMPORTANT FIX: Center Alignment === */
+        margin: 20px auto 30px; /* Auto left/right margin se center ho jayega */
+    }
+    .hero-image img {
+        width: 100%;
+        height: auto;
     }
     
     .hero-content h1 {
