@@ -1,159 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="description" content="Atass-Webdeveloper - Full Stack Developer Portfolio. Specializing in React, Node.js, and modern web applications. Hire me for your next project.">
-<meta name="keywords" content="React Developer, Full Stack, Node.js, Portfolio, Web Developer, JavaScript, Hire Developer, [Aapka Naam]">
-<meta name="author" content="[Aasim]">
-
-<meta property="og:title" content="Atass-Webdeveloper | Web Developer Portfolio">
-<meta property="og:description" content="A portfolio showcasing modern web development projects using the MERN stack.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aasim2038.github.io/Atass-Portfolio/">
-<meta property="og:image" content="https://raw.githubusercontent.com/Aasim2038/Atass-Portfolio/main/portfolio-min.jpeg">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Web Developer Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aasim | Full Stack MERN Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+    </style>
 </head>
+
 <body>
+    <div id="particles-js" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
 
-    <header>
-    <nav>
-        <div class="logo">Atass-Webdeveloper</div>
-        <ul>
-            <li><a href="#home" class="active">Home</a></li> 
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-    <main>
-
-        <section id="home" class="hero">
-            <div class="hero-content">
-               <h1>Welcome to Atass.</h1>
-                <p class="tagline">A Passionate <br>Full Stack/Frontend/Backend Web Developer.</p>
-                <a href="#projects" class="btn primary-btn">View My Work</a>
-                <a href="resume.html" class="btn secondary-btn">View Resume</a>
-            </div>
-            <div class="hero-image">
-                
-
-                <img src="atass_solutions_thumnail.png" alt="Atass-Webdeveloper Portfolio">
-
-            </div>
-        </section>
-
-        <section id="about" class="container">
-            <h2>👋 About Me</h2>
-            <p>Hello! I'm a developer with 1 years of experience. I specialize in Html., Css,. JavaScript., React, Node.js, and MongoDB. My goal is to create efficient, scalable, and user-friendly digital solutions. </p>
-            <p>I love learning new technologies and solving complex problems. Let's build something great together!</p>
-        </section>
-
-       <section id="skills" class="container">
-    <h2>💡 Technical Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-item" data-aos="fade-up">HTML & CSS</div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">JavaScript (ES6+)</div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">[Framework/Library 2, e.g., Next.js]</div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">[Backend Languag/Framework,eg..,Node.js/Express]</div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="400">Databases(MongoDB)</div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="500">Git & GitHub</div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="600">Cloud Platforms(Cloudnery)</div>
+    <nav class="navbar">
+        <a href="#" class="logo">Aasim<span class="gradient-text">.</span></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
         </div>
-</section>
-        <section id="projects" class="container">
-            <h2>🚀 Featured Projects</h2>
-            <div class="project-card" data-aos="fade-up">
-                <h3>SoftStitch.online</h3>
-                <p>A Clothing Fashion desing brand witch provide best designer shirts</p>
-                <div class="tech-used">
-                    <span>Html</span>
-                    <span>Css</span>
-                    <span>JavaScript</span>
-                    <span>Express</span>
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
+            <a href="#work">My Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="resume.html" target="_blank" class="btn btn-primary"
+                style="margin-left: 30px; padding: 8px 20px;">Resume</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h3>Hello, I'm Aasim</h3>
+            <h1>Building <span class="gradient-text typing-text"></span><br> Digital Experiences.</h1>
+            <p>I am a MERN Stack Developer focused on building scalable, secure, and high-performance web applications
+                that solve real-world business problems.</p>
+            <div class="hero-btns">
+                <a href="#work" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2 class="section-title" data-aos="fade-up">Featured <span>Project</span></h2>
+
+        <div class="featured-project" data-aos="zoom-in-up" data-aos-duration="1200">
+            <div class="project-info">
+                <span class="project-badge">MERN Full Stack</span>
+                <h3 class="project-title">ShoeOn - B2B E-commerce Platform</h3>
+                <p class="project-desc">
+                    An advanced B2B platform engineered to handle heavy traffic loads. I built a robust backend that
+                    includes custom security layers (rate limiting to prevent spam), automated image optimization for
+                    fast loading, and a real-time admin dashboard for inventory management.
+                </p>
+
+                <div class="project-metrics">
+                    <div class="metric">
+                        <h4>2000+</h4>
+                        <p>Products Managed</p>
+                    </div>
+                    <div class="metric">
+                        <h4>Secured</h4>
+                        <p>Anti-Spam & Rate Limiting</p>
+                    </div>
+                    <div class="metric">
+                        <h4>Fast</h4>
+                        <p>Auto Image Compression</p>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span>Node.js</span>
+                    <span>Express.js</span>
                     <span>MongoDB</span>
+                    <span>Cloudinary API</span>
+                    <span>Vanilla JS</span>
                 </div>
-                <a href="https://softstitch.online/" target="_blank" class="project-link">Live Demo</a>
-                <a href="[GitHub Link]" target="_blank" class="project-link">GitHub</a>
+
+                <a href="https://shoeon-websitedemo.onrender.com/" target="_blank" class="btn btn-primary"><i
+                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a href="#" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub
+                    Code</a>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-                <h3>ShoeOn.com</h3>
-                <p>Another project description. Highlight the technologies used and what you learned from this project.</p>
-                <div class="tech-used">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Firebase</span>
+
+            <div class="project-image">
+                <img src="shoeon screenshot.png" alt="ShoeOn Dashboard Screenshot">
+            </div>
+        </div>
+    </section>
+    <section id="more-projects">
+        <h3 class="section-title" style="font-size: 2rem; margin-bottom: 40px;">Other <span
+                class="gradient-text">Noteworthy Work</span></h3>
+
+        <div class="projects-grid">
+
+            <div class="mini-project-card" data-aos="fade-up">
+                <div class="card-top">
+                    <i class="fa-regular fa-folder-open folder-icon"></i>
+                    <div class="card-links">
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
-                <a href="[Live Demo Link]" target="_blank" class="project-link">Live Demo</a>
-                <a href="[GitHub Link]" target="_blank" class="project-link">GitHub</a>
-            </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                <h3>Project Title Three</h3>
-                <p>Describe your third project here. What problem does it solve? What makes it unique?</p>
-                <div class="tech-used">
-                    <span>Python</span>
-                    <span>Django</span>
-                    <span>PostgreSQL</span>
-                    <span>Docker</span>
+                <h4>Realtime Chat App</h4>
+                <p>A live messaging app allowing multiple users to chat instantly using Socket.io.</p>
+                <div class="card-tags">
+                    <span>Node.js</span><span>Socket.io</span><span>React</span>
                 </div>
-                <a href="[Live Demo Link]" target="_blank" class="project-link">Live Demo</a>
-                <a href="[GitHub Link]" target="_blank" class="project-link">GitHub</a>
             </div>
-            </section>
-        </main>
+
+            <div class="mini-project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-top">
+                    <i class="fa-regular fa-folder-open folder-icon"></i>
+                    <div class="card-links">
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <h4>Weather Dashboard</h4>
+                <p>Fetches live weather data for any city using OpenWeather API with dark mode support.</p>
+                <div class="card-tags">
+                    <span>JS</span><span>API</span><span>CSS3</span>
+                </div>
+            </div>
+
+            <div class="mini-project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-top">
+                    <i class="fa-regular fa-folder-open folder-icon"></i>
+                    <div class="card-links">
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h4>Task Manager (CRUD)</h4>
+                <p>A productivity tool to add, edit, and delete daily tasks with local storage save.</p>
+                <div class="card-tags">
+                    <span>React</span><span>LocalStorage</span>
+                </div>
+            </div>
+
+            <div class="mini-project-card hidden-project">
+                <div class="card-top">
+                    <i class="fa-regular fa-folder-open folder-icon"></i>
+                    <div class="card-links">
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h4>Netflix Clone UI</h4>
+                <p>Pixel perfect clone of Netflix homepage using pure CSS and TMDB API.</p>
+                <div class="card-tags">
+                    <span>HTML</span><span>CSS</span><span>API</span>
+                </div>
+            </div>
+
+            <div class="mini-project-card hidden-project">
+                <div class="card-top">
+                    <i class="fa-regular fa-folder-open folder-icon"></i>
+                    <div class="card-links">
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h4>Portfolio v1</h4>
+                <p>My first portfolio website built with basic HTML/CSS to learn grid layout.</p>
+                <div class="card-tags">
+                    <span>HTML</span><span>CSS</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <button id="view-more-btn" class="btn btn-secondary">View More Projects</button>
+        </div>
+    </section>
+
+
+    <section id="skills">
+        <h2 class="section-title" data-aos="fade-up">Technical <span>Arsenal</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fa-brands fa-node-js gradient-text"></i>
+                <h3>Node.js & Express</h3>
+                <p>Building scalable RESTful APIs and secure backends.</p>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fa-solid fa-database gradient-text"></i>
+                <h3>MongoDB</h3>
+                <p>Designing complex schemas and managing data efficiently.</p>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+                <i class="fa-brands fa-js gradient-text"></i>
+                <h3>JavaScript (ES6+)</h3>
+                <p>Creating dynamic interactive frontend experiences.</p>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
+                <i class="fa-solid fa-server gradient-text"></i>
+                <h3>DevOps & Tools</h3>
+                <p>Git, Postman, Render Deployment, Cloudinary.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="github-stats" style="text-align: center;">
+    <h3 class="section-title" data-aos="fade-up">My Coding <span class="gradient-text">Activity</span></h3>
+    
+    <div class="activity-container" data-aos="zoom-in">
+        
+        <div class="graph-box">
+<img src="https://raw.githubusercontent.com/kelvinandara/github-profile-summary-cards/master/docs/assets/stats_card.png" 
+     alt="Github Contribution Chart" 
+     class="main-graph"
+     style="width: 100%; border-radius: 10px;">        </div>
+
+        <div class="stats-row">
+            <div class="stat-item">
+                <i class="fa-solid fa-code-commit"></i>
+                <h3>1,200+</h3>
+                <p>Commits Year</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-code-branch"></i>
+                <h3>30+</h3>
+                <p>Repositories</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h3>500+</h3>
+                <p>Hours Coded</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-star"></i>
+                <h3>15+</h3>
+                <p>Live Projects</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section id="contact" style="padding-bottom: 150px;">
+        <h2 class="section-title" data-aos="fade-up">Let's <span>Connect</span></h2>
+        <div class="contact-container" data-aos="fade-up">
+            <p style="font-size: 1.2rem; color: var(--text-secondary); text-align: center; max-width: 600px;">
+                I'm currently open to freelance projects or full-time opportunities. If you need a robust application
+                built, let's talk numbers and solutions.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:atasssolutions@gmail.com" class="contact-btn" title="Email Me">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="tel:+919657728658" class="contact-btn" title="Call Me">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" class="contact-btn" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="YOUR_GITHUB_URL" target="_blank" class="contact-btn" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+            <br><br>
+            <a href="YOUR_RESUME_LINK.pdf" target="_blank" class="btn btn-primary">Download Resume <i
+                    class="fa-solid fa-download"></i></a>
+        </div>
+    </section>
 
     <footer>
-            
-            <section id="contact" class="container" data-aos="fade-up">
-    <h2>✉️ Get In Touch</h2>
-    <p>I'm currently looking for new opportunities. Let's connect and discuss your project or job opening!</p>
-
-    <form id="contact-form" action="https://formspree.io/f/xyzrzvjn" method="POST">
-        
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="_replyto" required placeholder="Enter your email address">
-        </div>
-
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="What can I help you with?"></textarea>
-        </div>
-
-        <button type="submit" class="btn primary-btn">Send Message</button>
-    </form>
-    
-    <div class="social-links-contact">
-        <p>Or connect via:</p>
-        <a href="https://www.linkedin.com/in/mohmmed-aasim-9525902aa/" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/Aasim2038" target="_blank">GitHub</a>
-    </div>
-<p>&copy; 2025 Atass. All rights reserved.</p>
-</section>
-
+        <p>Designed & Built by Aasim. © 2023 Atass Solutions.</p>
     </footer>
 
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-    
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
     <script>
-        AOS.init({
-            duration: 1000, // Animation ki speed (1 second)
-            once: true,      // Animation sirf ek baar chale jab user section pe pahunche
+        // Cards par 3D effect activate karo
+        VanillaTilt.init(document.querySelectorAll(".mini-project-card"), {
+            max: 15,            // Kitna tedha hoga
+            speed: 400,         // Speed
+            glare: true,        // Kaanch jaisi chamak
+            "max-glare": 0.2,   // Chamak ki intensity
+        });
+
+        // Featured Project par bhi lagao
+        VanillaTilt.init(document.querySelector(".featured-project"), {
+            max: 5,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.1,
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 40 },
+                "color": { "value": "#6e8efb" }, /* Blue particles */
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3 },
+                "size": { "value": 3 },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": { "enable": true, "speed": 2 }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }
+                }
+            }
         });
     </script>
 </body>
+
 </html>

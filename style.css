@@ -1,503 +1,519 @@
-/* 1. Global Reset & Typography (Dark Theme) */
-:root {
-    --primary-color: #00FF99; /* Neon Green/Mint Accent */
-    --secondary-color: #00B36B; /* Slightly darker green */
-    --background-dark: #121212; /* Very dark background */
-    --card-background: #1F1F1F; /* Slightly lighter card/section background */
-    --text-color-light: #E0E0E0; /* Light text for readability */
-    --border-radius: 8px;
-    --font-family: 'Montserrat', sans-serif;
+ /* ================= VARIABLES & RESET ================= */
+        :root {
+            --bg-main: #0a0a0a; /* Deep dark background */
+            --bg-secondary: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            /* Modern Gradient Accent */
+            --accent-gradient: linear-gradient(135deg, #6e8efb, #a777e3);
+            --accent-solid: #8a2be2; 
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        /* ================= UTILITIES ================= */
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px -10px rgba(138, 43, 226, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -10px rgba(138, 43, 226, 0.7);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-solid);
+            color: white;
+            margin-left: 20px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-solid);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8); /* Semi-transparent */
+            backdrop-filter: blur(10px); /* Glass effect */
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            margin-left: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-solid);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            /* Background pattern optional */
+            background-image: radial-gradient(circle at 20% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(110, 142, 251, 0.15) 0%, transparent 40%);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* ================= FEATURED PROJECT (ShoeOn Special) ================= */
+        .featured-project {
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            padding: 50px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            border: 1px solid var(--glass-border);
+            /* Glassmorphism effect */
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: var(--accent-gradient);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .metric h4 {
+            font-size: 1.8rem;
+            color: var(--accent-solid);
+        }
+        .metric p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tech-stack span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .project-image {
+            flex: 1.2;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s;
+            border: 1px solid var(--glass-border);
+        }
+
+        .project-image:hover {
+             transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* ================= SKILLS ================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-solid);
+            box-shadow: 0 10px 20px -10px rgba(138, 43, 226, 0.3);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .fa-node-js, .fa-node { color: #68a063; }
+        .fa-react { color: #61dbfb; }
+        .fa-database { color: #4db33d; } /* MongoDBish */
+        .fa-js { color: #f0db4f; }
+        .fa-server {color: #a777e3;}
+
+
+        /* ================= CONTACT ================= */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-btn {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-gradient);
+            transform: scale(1.1);
+            border-color: transparent;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--text-color-light);
-    background-color: var(--background-dark);
-    
-    /* === FIX: Yeh line add karein === */
-    
-}
-
-.html::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
-}
-html {
-    scroll-behavior: smooth; 
-        transition: background-color 0.3s, color 0.3s;
-
-}
-/* Headings */
-h1, h2, h3 {
-    font-weight: 700;
-    margin-bottom: 0.5em;
-
-}
-
-h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color); /* Neon accent for section titles */
-    text-align: center;
-    margin-bottom: 2em;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--secondary-color); /* Subtle underline effect */
-    display: inline-block;
-}
-
-/* Links */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-/* Utility Class */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 80px 20px; /* Increased padding for more breathing room */
-}
-
-/* 2. Header & Navigation */
-header {
-    background-color: var(--background-dark);
-    border-bottom: 1px solid #292929; /* Dark border separator */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 20px;
-}
-
-/* Navigation: Active Link Styling */
-nav ul a.active {
-    color: white; /* Active link ka color bright white rakha */
-    font-weight: 700;
-}
-
-/* Active link pe neon underline dikhane ke liye */
-nav ul a.active::after {
-    width: 100%;
-    background-color: var(--primary-color);
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 35px;
-}
-
-nav ul a {
-    font-weight: 600;
-    padding: 5px 0;
-    position: relative;
-    color: var(--text-color-light);
-    font-size: 1rem;
-}
-
-/* Neon Underline effect on hover */
-nav ul a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease-in-out;
-}
-
-nav ul a:hover::after {
-    width: 100%;
-}
-
-/* 3. Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    margin-top: 15px;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-transform: uppercase;
+.mini-project-card {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 15px;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
-    letter-spacing: 0.5px;
-}
-
-.primary-btn {
-    background-color: var(--primary-color);
-    color: var(--background-dark); /* Dark text on neon background */
-    border-color: var(--primary-color);
-}
-
-.primary-btn:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-    box-shadow: 0 0 10px var(--primary-color); /* Subtle neon glow */
-}
-
-.secondary-btn {
-    background-color: transparent;
-    border-color: var(--secondary-color);
-    color: var(--secondary-color);
-    margin-left: 15px;
-}
-
-.secondary-btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--background-dark);
-}
-
-/* 4. Hero Section */
-.hero {
-    min-height: 90vh;
+    border: 1px solid var(--glass-border);
+    /* Glassmorphism subtle touch */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mini-project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--accent-solid);
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Initially Hidden Projects */
+.hidden-project {
+    display: none; 
+}
+
+/* Card Content Styling */
+.card-top {
+    display: flex;
     justify-content: space-between;
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.hero-content {
-    max-width: 55%;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 0.2em;
-    color: white; /* White for the main name/title */
-    line-height: 1.1;
-}
-
-.hero-content .tagline {
-    font-size: 1.8rem;
-    color: var(--primary-color); /* Neon accent for tagline */
-    margin-bottom: 30px;
-}
-
-.hero-image {
-    max-width: 40%;
-    /* Inspired by the circular/shaped image or clean block on the Dribbble link */
-    width: 300px;
-    margin-left: 20px;
-}
-
-/* 5. About Me Section */
-#about {
-    background-color: var(--card-background);
-    border-top: 1px solid #eee;
-}
-
-#about p {
-    max-width: 800px;
-    margin: 0 auto 1.5em;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-/* 6. Skills Section */
-.skills-grid {
-    /* Displaying items in a nice, wrapping grid */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the skill items */
-    gap: 15px; /* Space between the skill items */
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.skill-item {
-    /* Look and Feel - Like the Project Tags */
-    background-color: transparent; /* Background dark rakha */
-    color: var(--primary-color); /* Neon text */
-    
-    padding: 10px 20px;
-    border-radius: 4px; 
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-align: center;
-    
-    /* Border aur Hover effect */
-    border: 1px solid var(--secondary-color); /* Subtle neon border */
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
-    
-    /* Optional: Thoda sa shadow */
-    box-shadow: 0 0 5px rgba(0, 255, 153, 0.2); 
-}
-
-.skill-item:hover {
-    background-color: var(--primary-color); /* Neon fill on hover */
-    color: var(--background-dark); /* Dark text on neon background */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); 
-}
-
-/* 7. Projects Section */
-#projects {
-    background-color: var(--card-background);
-    border-top: 1px solid #eee;
-}
-
-.project-card {
-    background-color: #f1f1f1;
-    padding: 30px;
-    border-radius: var(--border-radius);
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-    color: #333;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.tech-used {
-    margin: 15px 0;
-}
-
-.tech-used span {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-}
-
-.project-link {
-    margin-right: 15px;
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-/* 8. Contact Section */
-#contact {
-    text-align: center;
-}
-
-#contact p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-/* 9. Footer */
-footer {
-    background-color: #343A40;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--secondary-color);
-    margin: 0 5px;
-}
-
-#contact {
-    /* Center text ko form ke liye hatate hain */
-    text-align: center; 
-}
-
-#contact-form {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: var(--card-background); /* Dark card background */
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    text-align: left;
-}
-
-.form-group {
+    align-items: center;
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--text-color-light); /* Light text */
+.folder-icon {
+    font-size: 40px;
+    color: var(--accent-solid);
 }
 
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea {
+.card-links a {
+    color: var(--text-secondary);
+    font-size: 20px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.card-links a:hover {
+    color: white;
+}
+
+.mini-project-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.mini-project-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes tags to bottom */
+}
+
+.card-tags {
+    margin-top: auto;
+}
+
+.card-tags span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-right: 15px;
+    font-family: monospace;
+}
+
+.activity-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto; /* Center karne ke liye */
+    
+    /* Glass Effect */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.graph-box img.main-graph {
     width: 100%;
-    padding: 12px;
-    background-color: var(--background-dark); /* Very dark input background */
-    color: var(--text-color-light);
-    border: 1px solid var(--secondary-color); /* Neon border */
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+    height: auto;
+    filter: hue-rotate(240deg) contrast(1.2); /* Isse graph Purple/Blue ho jayega */
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
-#contact-form input:focus,
-#contact-form textarea:focus {
-    border-color: var(--primary-color); /* Highlight border on focus */
-    outline: none;
-    box-shadow: 0 0 5px var(--primary-color);
+/* Stats Row Styling */
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 30px;
 }
 
-#contact-form textarea {
-    resize: vertical;
+.stat-item {
+    text-align: center;
 }
 
-.social-links-contact {
-    margin-top: 30px;
-    color: #b0b0b0;
-}
-/* 10. Responsive Design (Basic) */
-/* 10. Responsive Design (Detailed) */
-@media (max-width: 992px) {
-    /* Large Tablets */
-    .hero-content h1 {
-        font-size: 3rem; /* Heading size kam kiya */
-    }
-    .hero-content .tagline {
-        font-size: 1.4rem;
-    }
-    .hero-image {
-        width: 250px;
-        height: 250px;
-    }
+.stat-item i {
+    font-size: 1.5rem;
+    color: var(--accent-solid);
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
+.stat-item h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
 
+.stat-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile ke liye */
 @media (max-width: 768px) {
-    
-    /* Hero Section Stacking */
-    .hero {
-        padding: 40px 20px;
-        flex-direction: column-reverse; /* Image upar, content neeche */
-        text-align: center;
-        min-height: unset;
-    }
-
-    .hero-content, .hero-image {
-        max-width: 100%; /* Full width */
-    }
-    
-    /* Hero Image ko center mein laya */
-    .hero-image {
-        width: 90%; /* Phone screen ki 90% width lega */
-        max-width: 400px; /* Lekin 400px se zyada nahi hoga */
-        height: auto;
-        
-        /* === IMPORTANT FIX: Center Alignment === */
-        margin: 20px auto 30px; /* Auto left/right margin se center ho jayega */
-    }
-    .hero-image img {
-        width: 100%;
-        height: auto;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content .tagline {
-        font-size: 1.2rem;
-    }
-
-    /* Buttons Stacking Fix (IMPORTANT FIX) */
-    .hero-content a.btn {
-        display: block; /* Buttons ko stack kiya */
-        width: 80%; /* Width fix ki */
-        margin: 10px auto; /* Center kiya */
-    }
-    
-    .secondary-btn {
-        margin-left: auto; /* Margin fix */
-    }
-
-    /* Navigation Hiding (Hamburger menu ki jagah simple hide) */
-    nav {
-        justify-content: center;
-    }
-    
-    nav ul {
-        display: none; /* Simple mobile nav hiding */
-    }
-    
-    .container {
-        overflow-x: hidden; /* Only horizontal scroll ko hide karein */
-        width: 100%;
-        padding: 40px 10px; /* Padding kam karein */
-    }
-
-    /* Skills Grid ko chota kiya */
-    .skills-grid {
-        gap: 10px;
-    }
-    
-    /* Project Cards ko full width diya */
-    .project-card {
-        padding: 20px;
+    .stats-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/* For smaller phones */
-@media (max-width: 480px) {
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content .tagline {
-        font-size: 1rem;
-    }
-    
-    /* Buttons ko thoda aur chota kiya */
-    .hero-content a.btn {
-        width: 95%; 
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5em;
-    }
-    
-    .logo {
-        font-size: 1.4rem;
-    }
+/* Animation for revealing projects */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+        @media (max-width: 1024px) {
+            section { padding: 80px 5%; }
+            .hero-content h1 { font-size: 3rem; }
+            .featured-project { flex-direction: column-reverse; }
+            .project-image { transform: none; width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 20px;
+                transition: 0.3s;
+                border-bottom: 1px solid var(--glass-border);
+            }
+            .nav-links.active { left: 0; }
+            .nav-links a { margin: 15px 0; font-size: 1.2rem; }
+            .btn-secondary { margin-left: 0; margin-top: 20px; }
+            
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content h3 { font-size: 1.5rem; }
+            .project-metrics { flex-wrap: wrap; gap: 20px; }
+        }
