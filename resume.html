@@ -3,85 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atass-Webdevloper - Professional Resume</title>
+    <title>Aasim | React Developer Resume</title>
     <link rel="stylesheet" href="resume_style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <div class="resume-container">
         
         <header class="header">
-            <h1>Atass-Webdevloper</h1>
-            <p class="title">Full Stack Developer | Frontend Specialist</p>
-            <div class="contact-info">
-                <span><a href="tel:9657728658">📞 9657728658</a></span>
-                <span><a href="mailto:atasssolutions@gmail.com">📧 atasssolutions@gmail.com</a></span>
-                <span><a href="https://www.linkedin.com/in/mohmmed-aasim-9525902aa/" target="_blank">🔗 LinkedIn</a></span>
-                <span><a href="https://github.com/Aasim2038" target="_blank">💻 GitHub</a></span>
-                <span><a href="https://www.linkedin.com/in/atass-solutions-9525902aa/" target="_blank">🌐 Portfolio</a></span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 5px;">MOHMMED AASIM</h1>
+            <p class="title" style="color: #6e8efb; font-weight: bold; letter-spacing: 1px;">REACT JS & FULL STACK DEVELOPER</p>
+            
+            <div class="contact-info" style="margin-top: 15px;">
+                <span><i class="fa-solid fa-phone"></i> +91 9657728658</span>
+                <span><i class="fa-solid fa-envelope"></i> atasssolutions@gmail.com</span>
+                <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/mohmmed-aasim</span>
+                <span><i class="fa-brands fa-github"></i> github.com/Aasim2038</span>
+            </div>
+            <div style="margin-top: 10px;">
+                <a href="https://aasim2038.github.io/Atass-Portfolio/" target="_blank" style="color: #4db33d; font-weight: bold; text-decoration: none;">🌐 Portfolio: aasim-portfolio.io</a>
             </div>
         </header>
 
         <main class="main-content">
             
             <section class="section">
-                <h2>Summary</h2>
-                <p>A results-driven Full Stack Web Developer with 1+ years of experience specializing in building scalable and responsive web applications using the **MERN stack (MongoDB, Express, React, Node.js)**. Proven ability to deliver high-quality code and optimize performance, leading to a 20% improvement in load times.</p>
+                <h2><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
+                <p>Results-oriented Web Developer with expertise in the <strong>MERN Stack (MongoDB, Express, React, Node.js)</strong>. Passionate about building high-performance <strong>Single Page Applications (SPAs)</strong> and interactive dashboards. Proven ability to translate business requirements into clean, maintainable code using modern tools like <strong>Tailwind CSS</strong> and <strong>Redux</strong>.</p>
             </section>
 
             <section class="section">
-                <h2>Technical Skills</h2>
-                <div class="skills-list">
-                    <p><strong>Frontend:</strong> HTML5, CSS3 (Flexbox, Grid), JavaScript (ES6+), **React**, Redux, Next.js, Bootstrap, Tailwind CSS.</p>
-                    <p><strong>Backend:</strong> Node.js, Express.js, REST APIs.</p>
-                    <p><strong>Databases:</strong> MongoDB,</p>
-                    <p><strong>Tools/DevOps:</strong> Git/GitHub, VS Code, Webpack, Docker (Basic), AWS/Azure (Basic).</p>
+                <h2><i class="fa-solid fa-code"></i> Technical Skills</h2>
+                <div class="skills-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <p><strong>✨ Frontend Core:</strong> React.js, JavaScript (ES6+), HTML5, CSS3</p>
+                    <p><strong>🎨 UI Frameworks:</strong> Tailwind CSS, Bootstrap, Material UI</p>
+                    <p><strong>⚙️ Backend:</strong> Node.js, Express.js, REST APIs</p>
+                    <p><strong>🗄️ Database:</strong> MongoDB, Mongoose</p>
+                    <p><strong>🛠️ Tools:</strong> Git/GitHub, VS Code, Vite, Postman, Vercel</p>
+                    <p><strong>📊 Libraries:</strong> Recharts, Redux Toolkit, Framer Motion</p>
                 </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fa-solid fa-briefcase"></i> Key Projects</h2>
+                
+                <div class="experience-item">
+                    <h3 style="display: flex; justify-content: space-between;">
+                        Enterprise Analytics Dashboard 
+                        <span class="dates" style="color: #6e8efb;">React, Tailwind, Recharts</span>
+                    </h3>
+                    <p class="project-details">A production-grade admin interface for managing e-commerce operations with real-time data visualization.</p>
+                    <ul class="achievements">
+                        <li>Developed a fast <strong>Single Page Application (SPA)</strong> using Vite + React, improving load time by 40% compared to traditional dashboards.</li>
+                        <li>Implemented a system-wide <strong>Dark/Light Mode toggle</strong> using Tailwind CSS configuration and local storage persistence.</li>
+                        <li>Integrated <strong>Recharts</strong> to render dynamic sales graphs and data analytics.</li>
+                        <li>Built a modular component architecture allowing for scalable feature additions (Orders, Customers, Settings).</li>
+                    </ul>
+                    <p style="margin-top: 5px; font-size: 0.9rem;">🔗 <strong>Live:</strong> <a href="https://professional-admin-panel.vercel.app/" target="_blank">professional-admin-panel.vercel.app</a></p>
+                </div>
+
+                <div class="experience-item">
+                    <h3 style="display: flex; justify-content: space-between;">
+                        ShoeOn - B2B E-commerce Platform 
+                        <span class="dates" style="color: #6e8efb;">MERN Stack</span>
+                    </h3>
+                    <p class="project-details">A full-stack marketplace connecting footwear manufacturers with retailers.</p>
+                    <ul class="achievements">
+                        <li>Engineered a robust REST API using <strong>Node.js & Express</strong> to handle product inventory and order processing.</li>
+                        <li>Secured the application with <strong>JWT Authentication</strong> and implemented rate-limiting to prevent spam attacks.</li>
+                        <li>Optimized image delivery using Cloudinary, resulting in a seamless user experience on mobile devices.</li>
+                    </ul>
+                     <p style="margin-top: 5px; font-size: 0.9rem;">🔗 <strong>Live:</strong> <a href="https://shoeon.in/" target="_blank">shoeon.in</a></p>
+                </div>
+                
             </section>
 
             <!-- <section class="section">
-                <h2>Featured Projects</h2>
-                
+                <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
                 <div class="experience-item">
-                    <h3>Project 1: ShoeOn <span class="dates">| Full Stack Web App</span></h3>
-                    <p class="project-details">Developed a full-stack Footwear B2B site using [Main Tech Stack]. Implemented user authentication and payment gateway integration.</p>
-                    <ul class="achievements">
-                        <li>Optimized database queries, reducing average server response time by **35%**.</li>
-                        <li>Utilized Redux for state management, resulting in cleaner and more maintainable code.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Project 2: [Project Name] <span class="dates">| Real-time Chat Application</span></h3>
-                    <p class="project-details">Built a real-time messaging application with [Technology used, e.g., React and Socket.io]. Designed a responsive user interface for mobile and desktop.</p>
-                    <ul class="achievements">
-                        <li>Handled over **50 concurrent users** during testing phase with minimal latency.</li>
-                        <li>Implemented robust error handling and input validation.</li>
-                    </ul>
-                </div>
-                
-            </section>
-
-            <section class="section">
-                <h2>Work Experience</h2>
-                
-                <div class="experience-item">
-                    <h3>[Job Title] <span class="company">at [Company Name]</span> <span class="dates">[Start Date] – [End Date]</span></h3>
-                    <ul class="achievements">
-                        <li>Built and maintained [specific feature] using [tech stack], which was used by X customers/users.</li>
-                        <li>Collaborated with the design team to translate mockups into fully functional, responsive UI components.</li>
-                        <li>Participated in code reviews, resulting in a **15% reduction** in post-deployment bugs.</li>
-                    </ul>
-                </div>
-
-            </section>
-
-            <section class="section">
-                <h2>Education</h2>
-                <div class="experience-item">
-                    <h3>[Degree Name] <span class="company">at [University/College Name]</span> <span class="dates">[Graduation Year]</span></h3>
-                    <p>Major: [Your Major] | [City]</p>
+                    <h3>Bachelor of Computer Applications (BCA) <span class="dates">2023</span></h3>
+                    <p>Deogiri College, Chhatrapati Sambhajinagar</p>
                 </div>
             </section> -->
 
